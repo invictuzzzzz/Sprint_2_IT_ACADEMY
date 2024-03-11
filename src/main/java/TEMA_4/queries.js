@@ -21,7 +21,7 @@ db.getCollection('restaurante').aggregate([{ $match: { 'grades': { $elemMatch: {
 db.getCollection('restaurante').aggregate([{ $match: { 'grades': { $elemMatch: { 'score': { $gt: 80, $lt: 100 } } } } }, { $min: 'grades.score' } ]);
 db.getCollection('restaurante').aggregate([ { $group:{ _id: "$borough", total: { $sum: 1 } } } ]);
 ////////////////
-
+db.getCollection('restaurante').aggregate([ { $group:{ _id: "$borough", total: { $sum: 1 } } } ]);
 //Escriu una consulta per trobar els restaurants que es localitzen en valor de latitud menys de -95.754168.
 
 //Escriu una consulta de MongoDB per a trobar els restaurants que no preparen cap cuisine de 'American' i la seva qualificació és superior a 70 i longitud inferior a -65.754168.
